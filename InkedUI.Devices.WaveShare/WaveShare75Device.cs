@@ -150,30 +150,6 @@ namespace InkedUI.Devices.WaveShare
                     bitmapData[(Width * y + x) / 2] = (byte)b;
                 }
 
-            //var tempBmp = new DirectBitmap(Width, Height);
-            //for (int j = 0; j < Height; j++)
-            //    for (int i = 0; i < Width; i++)
-            //    {
-            //        Color px;
-            //        var pos = bitmapData[(Width * j + i) / 2];
-            //        if (i % 2 == 0 || i == 0)
-            //            pos = (byte)(pos >> 4);
-            //        else
-            //            pos = (byte)(pos & 0x0f);
-
-            //        if (pos == 0x00)
-            //            px = Color.White;
-            //        else if (pos == 0x03)
-            //            px = Color.Black;
-            //        else if (pos == 0x04)
-            //            px = Color.Red;
-            //        else
-            //            Console.WriteLine("Unknown pixel type! " + pos);
-                    
-            //        tempBmp.SetPixel(i, j, px);
-            //    }
-            //tempBmp.Bitmap.Save("output_rebuilt.png");
-
             return bitmapData;
         }
 

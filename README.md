@@ -44,7 +44,6 @@ static void Main(string[] args)
         for (int j = 0; j < y / boxWidth; j++)
             for (int i = 0; i < x / boxWidth; i++)
             {
-                // Sta
                 var color = colors[c++ % colors.Length];
                 g.FillRectangle(color, i * boxWidth, j * boxHeight, boxWidth, boxHeight);
                 var txtBrush = (color == Brushes.Black ? Brushes.White : Brushes.Black);

@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InkedUI.Devices.RemotableDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InkedUI.Devices.WaveShare", "InkedUI.Devices.WaveShare\InkedUI.Devices.WaveShare.csproj", "{EC340058-248D-4D79-8033-E17C293860AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InkedCLIHost", "InkedCLIHost\InkedCLIHost.csproj", "{12714829-B19E-4D9F-9760-C82E373AC504}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Devices", "Devices", "{04C4E652-B4AC-492B-8C36-3B4D93F7F96C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InkedUI.Shared", "InkedUI.Shared\InkedUI.Shared.csproj", "{20906A1E-C576-4626-876D-00B9AC215A1C}"
@@ -18,8 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{C56C8CCD-8DF3-4C1F-A37F-B189BC548009}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkedUI.WPF", "InkedUI.WPF\InkedUI.WPF.csproj", "{6453AB7B-7CE6-4E62-8EE1-31583A9683CC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDraw", "TestDraw\TestDraw.csproj", "{16D5CD94-C624-4740-B4D5-C750A962B712}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{26839D2F-E176-441A-86C8-E47365A33FFF}"
 	ProjectSection(SolutionItems) = preProject
@@ -41,10 +37,6 @@ Global
 		{EC340058-248D-4D79-8033-E17C293860AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC340058-248D-4D79-8033-E17C293860AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC340058-248D-4D79-8033-E17C293860AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12714829-B19E-4D9F-9760-C82E373AC504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12714829-B19E-4D9F-9760-C82E373AC504}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12714829-B19E-4D9F-9760-C82E373AC504}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12714829-B19E-4D9F-9760-C82E373AC504}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20906A1E-C576-4626-876D-00B9AC215A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20906A1E-C576-4626-876D-00B9AC215A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20906A1E-C576-4626-876D-00B9AC215A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,10 +49,6 @@ Global
 		{6453AB7B-7CE6-4E62-8EE1-31583A9683CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6453AB7B-7CE6-4E62-8EE1-31583A9683CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6453AB7B-7CE6-4E62-8EE1-31583A9683CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16D5CD94-C624-4740-B4D5-C750A962B712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16D5CD94-C624-4740-B4D5-C750A962B712}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16D5CD94-C624-4740-B4D5-C750A962B712}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16D5CD94-C624-4740-B4D5-C750A962B712}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
