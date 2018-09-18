@@ -11,7 +11,7 @@ namespace InkedUI.Shared
 {
     public class EInkCanvas
     {
-        public Color[] AvailableInkColors { get; set; }
+        public Color[] AvailableInkColors { get; set; };
         public Bitmap CanvasSurface { get; private set; }
         public int Width => CanvasSurface.Width;
         public int Height => CanvasSurface.Height;
@@ -79,6 +79,9 @@ namespace InkedUI.Shared
 
         public void ExportDebugKit()
         {
+            if (AvailableInkColors == null || AvailableInkColors.Length == 0)
+                throw new InvalidOperationException("Must have at least one color specified in AvailableInkColors to perform a canvas export.");
+
             using (var fs = File.OpenWrite("debug_consolidated.png"))
                 ExportPreview(ImageFormat.Png, fs);
             foreach (var color in AvailableInkColors)
@@ -88,6 +91,9 @@ namespace InkedUI.Shared
 
         public void ExportPreview(ImageFormat imageFormat, Stream consolidatedOutputStream)
         {
+            if (AvailableInkColors == null || AvailableInkColors.Length == 0)
+                throw new InvalidOperationException("Must have at least one color specified in AvailableInkColors to perform a canvas export.");
+
             var bmp = GeneratePixelTransformedImage((x, y, inputColor) =>
             {
                 // Compares the input color to the given set of available colors, outputs the closest
@@ -100,6 +106,12 @@ namespace InkedUI.Shared
 
         public void Export(ImageFormat imageFormat, Color filterColor, Stream outputStream)
         {
+            if (AvailableInkColors == null || AvailableInkColors.Length == 0)
+                throw new InvalidOperationException("Must have at least one color specified in AvailableInkColors to perform a canvas export.");
+
+            if (!AvailableInkColors.Contains(filterColor))
+                throw new InvalidOperationException("Filter color must be included in the AvailableInkColors array.");
+
             Bitmap bmp;
             bmp = GeneratePixelTransformedImage((x, y, inputColor) =>
             {
