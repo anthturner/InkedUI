@@ -11,7 +11,7 @@ namespace InkedUI.Shared
 {
     public class EInkCanvas
     {
-        public Color[] AvailableInkColors { get; set; };
+        public Color[] AvailableInkColors { get; set; }
         public Bitmap CanvasSurface { get; private set; }
         public int Width => CanvasSurface.Width;
         public int Height => CanvasSurface.Height;
