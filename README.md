@@ -2,6 +2,8 @@
 
 ## Quickly and Easily Write Stylish e-Paper UIs with Familiar Technologies: **WinForms** and **WPF**
 
+![E-Ink display demo image showing an example layout](https://github.com/anthturner/InkedUI/raw/master/EInkDisplayDemo.png)
+
 ---
 
 This library was written to be able to quickly prototype and deploy user interfaces that are drawn on e-Paper devices.
