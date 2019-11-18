@@ -3,16 +3,17 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
-using Unosquare.RaspberryIO.Gpio;
+using Unosquare.RaspberryIO.Abstractions;
+using Unosquare.WiringPi;
 
 namespace InkedUI.Devices.WaveShare
 {
     public class WaveShareRaspberryPiDevice : WaveShare75Device
     {
-        private GpioPin BusyPin { get; set; }
-        private GpioPin ResetPin { get; set; }
-        private GpioPin DataPin { get; set; }
-        private SpiChannel Spi { get; set; }
+        private IGpioPin BusyPin { get; set; }
+        private IGpioPin ResetPin { get; set; }
+        private IGpioPin DataPin { get; set; }
+        private ISpiChannel Spi { get; set; }
 
         private enum LastModes { Data, Cmd, None };
         private LastModes _lastMode = LastModes.None;
@@ -23,17 +24,19 @@ namespace InkedUI.Devices.WaveShare
 
         protected override async Task InitGpio()
         {
+            Unosquare.RaspberryIO.Pi.Init<BootstrapWiringPi>();
+
             // NOTE: This is by BCM pin. VERY IMPORTANT!
-            ResetPin = GpioController.Instance.GetGpioPinByBcmPinNumber(17);
-            BusyPin = GpioController.Instance.GetGpioPinByBcmPinNumber(24);
-            DataPin = GpioController.Instance.GetGpioPinByBcmPinNumber(25);
+            ResetPin = Unosquare.RaspberryIO.Pi.Gpio[17];
+            BusyPin = Unosquare.RaspberryIO.Pi.Gpio[24];
+            DataPin = Unosquare.RaspberryIO.Pi.Gpio[25];
 
             ResetPin.PinMode = GpioPinDriveMode.Output;
             BusyPin.PinMode = GpioPinDriveMode.Input;
             DataPin.PinMode = GpioPinDriveMode.Output;
-            
-            Spi = SpiBus.Instance.Channel0;
-            SpiBus.Instance.Channel0Frequency = 2000000;
+
+            Spi = Unosquare.RaspberryIO.Pi.Spi.Channel0;
+            Unosquare.RaspberryIO.Pi.Spi.Channel0Frequency = 2000000;
 
             await Task.Yield();
         }
